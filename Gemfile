@@ -1,23 +1,29 @@
 source 'https://rubygems.org'
+ 
+ git_source(:github) do |repo_name|
+ repo_name = "#{repo_name}/#{repo_name}" unless repo_name.include?("/")
+   "https://github.com/#{repo_name}.git"
+ end
+ 
+ 
+ gem 'rails', '~> 5.0.2'
+ gem 'sqlite3'
+ gem 'puma', '~> 3.0'
+ gem 'sass-rails', '~> 5.0'
+ gem 'uglifier', '>= 1.3.0'
+ gem 'coffee-rails', '~> 4.2'
+ gem 'jquery-rails'
+ gem 'turbolinks', '~> 5'
+ gem 'jbuilder', '~> 2.5'
+ gem 'bootstrap-sass', '~> 3.0.3.0'
+ gem "paperclip", git: "git://github.com/thoughtbot/paperclip.git"
 
-gem 'rails', '4.2.5'
-gem 'sqlite3'
-gem 'sass-rails', '~> 5.0'
-gem 'uglifier', '>= 1.3.0'
-gem 'coffee-rails', '~> 4.1.0'
-gem 'jquery-rails'
-gem 'turbolinks'
-gem 'jbuilder', '~> 2.0'
-gem 'bootstrap-sass', '~> 3.0.3.0'
-gem 'paperclip', github: 'thoughtbot/paperclip'
-
-gem 'sdoc', '~> 0.4.0', group: :doc
-group :development, :test do
-  gem 'byebug'
-end
-
-group :development do
-  gem 'web-console', '~> 2.0'
-
-  gem 'spring'
-end
+ group :development, :test do
+   gem 'byebug', platform: :mri
+ end
+ 
+ group :development do
+   gem 'web-console', '>= 3.3.0'
+ end
+ 
+ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
