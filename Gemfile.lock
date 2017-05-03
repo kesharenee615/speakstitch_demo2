@@ -172,7 +172,6 @@ PLATFORMS
 
 DEPENDENCIES
   bootstrap-sass (~> 3.0.3.0)
-  byebug
   coffee-rails (~> 4.2)
   jbuilder (~> 2.5)
   jquery-rails
